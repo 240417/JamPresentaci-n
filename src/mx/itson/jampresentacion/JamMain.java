@@ -5,7 +5,10 @@
  */
 package mx.itson.jampresentacion;
 
-import mx.itson.jam.nucleo.execepciones.ImpuestoException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import mx.itson.jam.nucleo.execepciones.*;
 import mx.itson.jamnucleo.Operacion;
 
 /**
@@ -19,10 +22,14 @@ public class JamMain {
      */
     public static void main(String[] args) {
         
+        
         try{
+            Scanner sr = new Scanner(System.in);
             Operacion o = new Operacion ();
-            o.calcularIVA(450, 16);
-        }catch(ImpuestoException ex){
+            //o.calcularIVA(450, 16);
+          List<Integer> lista = Arrays.asList(1,6,4,3,3,3,3,5,5,5,5);
+          o.sumaNumeros(lista);
+        }catch(CapacidadException ex){
             System.out.println("Ocurrio un error: "+ex.getMessage());
         }
         
